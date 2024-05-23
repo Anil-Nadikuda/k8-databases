@@ -12,7 +12,7 @@ spec:
       app: mongodb
       project: roboshop
       tier: db
-  serviceName: "nginx"
+  serviceName: "mongodb"
   replicas: {{ .Values.statefullset.replicas }}
   template:
     metadata:
@@ -21,7 +21,6 @@ spec:
         project: roboshop
         tier: db
     spec:
-      terminationGracePeriodSeconds: 10
       containers:
       - name: mongodb
         image: "anilnadikuda/mongodb:{{ .Values.statefullset.imageVersion }}"
@@ -37,4 +36,3 @@ spec:
       resources:
         requests:
           storage: 1Gi
----

@@ -1,5 +1,5 @@
-apiVersion:
+apiVersion: v1
 name: mongodb
-version: 
-description:
-appVersion: 
+version: 0.0.2
+description: this is customised helm chart for mongodb
+appVersion: v1 

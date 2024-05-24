@@ -25,6 +25,8 @@ spec:
       containers:
       - name: rabbitmq
         image: "anilnadikuda/rabbitmq:{{ .Values.statefullset.imageVersion }}"
+        args:
+        - "--ignore-db-dir=lost+found"        
         envFrom:
         - secretRef:
             name: rabbitmq

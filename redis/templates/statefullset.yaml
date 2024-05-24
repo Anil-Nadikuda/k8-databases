@@ -23,10 +23,10 @@ spec:
     spec:
       containers:
       - name: redis
-        image: "redis:{{ .Values.statefullSet.imageVersion }}"
+        image: redis
         volumeMounts:
         - name: redis
-          mountPath: /data/db
+          mountPath: /data
   volumeClaimTemplates:
   - metadata:
       name: redis

@@ -25,6 +25,13 @@ spec:
       - name: payment
         image: "anilnadikuda/payment:{{ .Values.deployement.imageVersion }}"
         imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: "50m"
+            memory: "64Mi"
+          limits:
+            cpu: "100m"
+            memory: "128Mi"
         envFrom:
         - secretRef:
             name: payment

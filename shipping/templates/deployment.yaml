@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: shipping
-        image: "anilnadikuda/shipping:{{ .Value.deployement.imageVersion }}"
+        image: "anilnadikuda/shipping:{{ .Values.deployement.imageVersion }}"
         imagePullPolicy: Always
         resources:
           requests:

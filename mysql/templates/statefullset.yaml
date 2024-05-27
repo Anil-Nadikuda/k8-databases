@@ -14,7 +14,7 @@ spec:
       project: roboshop
       tier: db
   serviceName: "mysql"
-  replicas: {{ .Values.statefullset.replicas }}
+  replicas: {{ .Values.statefulset.replicas }}
   template:
     metadata:
       labels:
@@ -24,7 +24,9 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: "anilnadikuda/mysql:{{ .Values.statefullset.imageVersion }}"
+        image: "anilnadikuda/mysql:{{ .Values.statefulset.imageVersion }}"
+        args:
+        - "--ignore-db-dir=lost+found"
         envFrom:
         - configMapRef:
             name: mysql

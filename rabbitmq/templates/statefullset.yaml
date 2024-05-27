@@ -14,7 +14,7 @@ spec:
       project: roboshop
       tier: db
   serviceName: "rabbitmq"
-  replicas: {{ .Values.statefullset.replicas }}
+  replicas: {{ .Values.statefulset.replicas }}
   template:
     metadata:
       labels:
@@ -25,8 +25,6 @@ spec:
       containers:
       - name: rabbitmq
         image: rabbitmq
-        args:
-        - "--ignore-db-dir=lost+found"        
         envFrom:
         - secretRef:
             name: rabbitmq
@@ -41,4 +39,4 @@ spec:
       storageClassName: "ebs-sc"
       resources:
         requests:
-          storage: 1Gi
+          storage: 2Gi

@@ -8,7 +8,7 @@ metadata:
     project: roboshop
     tier: web
 spec:
-  replicas: {{ .Values.deployement.replicas }}
+  replicas: 1
   selector:
     matchLabels: # these labels are used to find the pods
       app: web
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: "anilnadikuda/web:{{ .Values.deployement.imageVersion }}"
+        image: anilnadikuda/web:v1
         imagePullPolicy: Always
         resources:
           requests:
